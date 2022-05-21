@@ -1,11 +1,23 @@
 package com.valdir.bookstore;
 
+import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import com.valdir.bookstore.domain.Categoria;
 
-public class Livro {
+@Entity
 
+public class Livro implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
 	private Integer id;
 	private String tituilo;
 	private String nome_autor;
